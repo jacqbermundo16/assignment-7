@@ -43,9 +43,11 @@ def count3(sentenceh):
     return countConsonants
 
 # display the results
+def display(_words, _vowels, _consonants):
+    print(f"words: {_words}\nvowels: {_vowels}\nconsonants: {_consonants}")
 
 sentence = askInput()
 words = count(sentence)
 vowels = count2(sentence)
 consonants = count3(sentence)
-print(words, vowels, consonants)
+display(words, vowels, consonants)
