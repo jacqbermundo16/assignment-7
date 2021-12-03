@@ -16,21 +16,41 @@ def askPassword():
 # create a function that counts the length of the password
 def count(password_):
     countPass = len(password_)
-    capital = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    number = '0123456789'
-# check if the characters are greater than 15
-    if countPass > 15:
-        for c in password_:
-            for d in capital:
-                if c == d:
-                   print('capital letter is present')
-                   break
-        else: 
-            print('please add a capital letter')
-    else:
-        print('please add more characters')
+    return countPass
+  
+# check if it has a capital letter
+def checkCaps(passwordq):
+    char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    capCount = 0
+    for c in passwordq:
+        for d in char:
+            if c == d:
+                capCount = capCount + 1
+    return capCount
+           
+# check if there is a number
+def checkNum(passwordw):
+    char = '0123456789'
+    numCount = 0
+    for e in passwordw:
+        for f in char:
+            if e == f:
+                numCount = numCount +1
+    return numCount 
 # check if it contains special character
+def checkSpec(passworde):
+    char = '~!@#$%^&*()_+=-\/.,<>:;'
+    specCount = 0
+    for g in passworde:
+        for h in char:
+            if g == h:
+                specCount = specCount + 1
+    return specCount
 # print the result
 
 password = askPassword()
-count(password)
+length = count(password)
+caps = checkCaps(password)
+nums = checkNum(password)
+specs = checkSpec(password)
+print(length, caps, nums, specs)
