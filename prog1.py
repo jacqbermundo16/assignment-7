@@ -31,11 +31,21 @@ def count2(sentenceg):
             if v == d:
                 countVowels = countVowels + 1
     return countVowels
-    
+
 # create a function that counts the number of consonants
+def count3(sentenceh):
+    countConsonants = 0
+    char = 'bcdfghjklmnpqrstvwxyz'
+    for c in sentenceh:
+        for e in char:
+            if c == e:
+                countConsonants = countConsonants + 1
+    return countConsonants
+
 # display the results
 
 sentence = askInput()
 words = count(sentence)
 vowels = count2(sentence)
-print(words, vowels)
+consonants = count3(sentence)
+print(words, vowels, consonants)
