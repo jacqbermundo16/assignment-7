@@ -46,11 +46,26 @@ def checkSpec(passworde):
             if g == h:
                 specCount = specCount + 1
     return specCount
-# print the result
+#evaluate the password if 
+def checkPass(_length, _caps, _nums, _specs):
+    if _length > 15:
+        if _caps >= 1:
+            if _nums >= 1:
+                if _specs >= 1:
+                    print('Valid')
+                else:
+                    print("Password must contain a special character '~!@#$%^&*()_+=-\/.,<>:;'")
+            else:
+                print('Password must contain at least one number')
+        else: 
+            print('Password must contain at least one capital letter')
+    else:
+        print('Password must be composed of more than 15 characters')
 
 password = askPassword()
 length = count(password)
 caps = checkCaps(password)
 nums = checkNum(password)
 specs = checkSpec(password)
-print(length, caps, nums, specs)
+# print the result
+checkPass(length, caps, nums, specs)
