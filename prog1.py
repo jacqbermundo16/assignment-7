@@ -14,9 +14,19 @@ def askInput():
     _sentence = input("Write a sentence: ")
     return _sentence
 
+
+def count(sentencef):
+    countWord = 1
+    for w in sentencef:
+        if w == ' ':
+            countWord = countWord + 1
+    return countWord
+
 # create a function that counts the number of words
 # create a function that counts the number of vowels
 # create a function that counts the number of consonants
 # display the results
 
-sentence = askInput() 
+sentence = askInput()
+words = count(sentence)
+print(words)
