@@ -16,8 +16,19 @@ def askPassword():
 # create a function that counts the length of the password
 def count(password_):
     countPass = len(password_)
+    capital = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    capCount = 0
     if countPass > 15:
-        print('length is valid')
+        for c in password_:
+            for d in capital:
+                if c == d:
+                    capCount = capCount + 1
+                    if capCount >= 1:
+                        print('capital letter is present')
+                    else: 
+                        print('add a capital letter to your password')
+                    
+                    
     else:
         print('please add more characters')
 # check if the characters are greater than 15
